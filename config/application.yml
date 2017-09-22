@@ -1,0 +1,20 @@
+# Database Secrets
+#
+database_adapter: 'mysql2'
+database_encoding: 'utf8'
+database_pool: '5'
+database_name: 'bank_management_development'
+database_username: 'root'
+database_password: 'root'
+database_host: 'localhost'
+
+#
+# Application Secrets
+#
+secret_key_base: '761c417ce708ab62e95a4acbd493de597231df5beb93f307e75213c08721f711a06412f4a2a03a6ef729c02a347aa7d84f490262bcb60e9fc46d26583f4afae9'
+devise_secret_key: '1c593a20619fbe8280a8a579f478a54fffa67c7c1e5aef9eb549b7b9904ff72e7b58520cb1b3220bdfb4ae5b63245f1bd15732c04af37bbcbf19a17a875fb6ff'
+
+#
+# SMTP Configuration
+#
+from_email: ''

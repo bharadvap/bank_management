@@ -2,8 +2,6 @@ default: &default
   adapter: <%= ENV['database_adapter'] %>
   pool:    <%= ENV['database_pool'] %>
   database: <%= ENV['database_name'] %>
-  username: <%= ENV['database_username'] %>
-  password: <%= ENV['database_password'] %>
   encoding: <%= ENV['database_encoding'] %>
 
 development:

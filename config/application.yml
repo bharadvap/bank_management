@@ -1,7 +1,7 @@
 # Database Secrets
 #
-database_adapter: 'mysql2'
-database_encoding: 'utf8'
+database_adapter: 'postgresql'
+database_encoding: 'unicode'
 database_pool: '5'
 database_name: 'bank_management_development'
 database_username: 'root'

@@ -1,6 +1,7 @@
 default: &default
   adapter: <%= ENV['database_adapter'] %>
   pool:    <%= ENV['database_pool'] %>
+  database: <%= ENV['database_name'] %>
   encoding: <%= ENV['database_encoding'] %>
 
 development:

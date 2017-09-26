@@ -10,10 +10,13 @@ class Transaction < ApplicationRecord
   validates(
     :description,
     presence: true,
+    length: {
+      maximum: 900
+    }
   )
   validates(
     :amount,
-    presence: true,
+    presence: true
   )
   validates(
     :transaction_type,
@@ -23,7 +26,7 @@ class Transaction < ApplicationRecord
   #
   ## Callbacks
   #
-  before_validation :check_account_number
+  before_validation :check_account_number, :check_balance
   after_create :remove_amount_from_balance
   def check_account_number
     if self.transaction_type == "NEFT"
@@ -31,6 +34,14 @@ class Transaction < ApplicationRecord
       if !@account.present?
         errors.add(:account_number,"Account is not Exists")
       end
+    end
+  end
+
+  def check_balance
+    if self.account.balance <= 0.0
+      errors.add(:amount,"You don't have sufficient balance in your account.")
+    elsif self.account.balance < self.amount
+      errors.add(:amount,"Please enter valid amount according to your current balance.")
     end
   end
 
